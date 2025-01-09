@@ -1,10 +1,18 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { page } from '$app/stores';
 	import { siteConfig } from '$lib/config/site';
 
-	export let title: string = siteConfig.name;
+	interface Props {
+		title?: string;
+	}
 
-	$: title = $page.data?.title ? `${$page.data.title} - ${siteConfig.name}` : siteConfig.name;
+	let { title = $bindable(siteConfig.name) }: Props = $props();
+
+	run(() => {
+		title = $page.data?.title ? `${$page.data.title} - ${siteConfig.name}` : siteConfig.name;
+	});
 </script>
 
 <svelte:head>
