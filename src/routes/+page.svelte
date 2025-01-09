@@ -1,9 +1,10 @@
 <script>
-	import { Hero, SiteHeader, Description } from '$lib/index';
+	import Features from './../lib/components/features.svelte';
+	import { Hero, SiteHeader } from '$lib/index';
 </script>
 
-<div class="px-5">
-	<SiteHeader />
+<SiteHeader />
+<main class="pt-20">
 	<Hero />
-	<Description />
-</div>
+	<Features />
+</main>

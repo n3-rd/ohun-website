@@ -5,13 +5,18 @@ export default {
 
 	theme: {
 		extend: {
+			colors: {
+				primary: 'var(--primary)',
+				secondary: 'var(--secondary)',
+				accent: 'var(--accent)',
+				background: 'var(--background)',
+				text: 'var(--text)',
+			},
 			fontFamily: {
-				sans: ['excon'],
-				bold: ['excon-bold'],
-				black: ['excon-black']
+				sans: ['Inter', 'sans-serif'],
 			}
 		}
 	},
 
 	plugins: [require('@tailwindcss/typography')]
-} as Config;
+} satisfies Config;
